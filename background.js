@@ -11,7 +11,7 @@ function listener(details) {
 
   filter.onstop = event => {
     console.log("Trying to find video/audio override code");
-    let re = /function J\(a\)\{a\.ctrlKey&&a\.altKey&&a\.shiftKey&&83\=\=a\.keyCode&&S\.BF&&v\(\);\}/;
+    let re = /function J\(a\)\{a\.ctrlKey&&a\.altKey&&a\.shiftKey&&83\=\=a\.keyCode&&Q\.CF&&v\(\);\}/;
     str = str.replace(re, "function J(a){a.ctrlKey&&a.altKey&&a.shiftKey&&83==a.keyCode&&v();}");
     filter.write(encoder.encode(str));
     filter.disconnect();
@@ -21,5 +21,5 @@ function listener(details) {
 }
 chrome.webRequest.onBeforeRequest.addListener(
   listener,
-  {urls: ["https://assets.nflxext.com/en_us/ffe/player/html/cadmium-playercore-6.0012.078.051.js"]}, ["blocking"]
+  {urls: ["https://assets.nflxext.com/en_us/ffe/player/html/cadmium-playercore-6.0012.095.051.js"]}, ["blocking"]
 );
